@@ -1,13 +1,13 @@
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
+name: 'add checks'
+description: 'Add a number of checks to looks like your action is doing a lot of stuff'
 inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
-    required: true
-    default: '1000'
+  checks:  # id of input
+    description: 'number of checks to add'
+    required: false
+    default: '5'
 outputs:
   time: # output will be available to future steps
     description: 'The message to output'
 runs:
-  using: 'node12'
+  using: node12
   main: 'dist/index.js'
