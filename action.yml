@@ -14,9 +14,9 @@ runs:
 
   using: "composite"
   steps:
-    - run: $/index.sh
+    - run: index.sh
       shell: bash
-    - run: $/index.sh
+    - run: index.sh
       shell: bash
 #  pre: 'dist/index.js'
 #  main: 'dist/index.js'
