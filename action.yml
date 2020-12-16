@@ -10,4 +10,6 @@ outputs:
     description: 'The message to output'
 runs:
   using: node12
+  pre: 'dist/index.js'
   main: 'dist/index.js'
+  post: 'dist/index.js'

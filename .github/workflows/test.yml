@@ -24,6 +24,3 @@ jobs:
     - uses: ./
       with:
         checks: 3
-    - uses: ./
-      with:
-        checks: 6
