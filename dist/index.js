@@ -6,14 +6,15 @@ require('./sourcemap-register.js');module.exports =
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
 const core = __webpack_require__(186);
+const wait = __webpack_require__(258);
 
 
 // most @actions toolkit packages have async methods
-async function run() {
+async function run(i) {
   try {
 
     core.debug((new Date()).toTimeString()); // debug is only output if you set the secret `ACTIONS_RUNNER_DEBUG` to true
-    console.log("yeeeee")
+    await wait(parseInt(i) * 100);
     core.info((new Date()).toTimeString());
 
     core.setOutput('time', new Date().toTimeString());
@@ -25,7 +26,7 @@ async function run() {
 const checks = core.getInput('checks');
 
 for (let i = 0; i < checks; i++) {
-  run();
+  run(i);
 }
 
 
@@ -421,6 +422,23 @@ function toCommandValue(input) {
 }
 exports.toCommandValue = toCommandValue;
 //# sourceMappingURL=utils.js.map
+
+/***/ }),
+
+/***/ 258:
+/***/ ((module) => {
+
+let wait = function (milliseconds) {
+  return new Promise((resolve) => {
+    if (typeof milliseconds !== 'number') {
+      throw new Error('milliseconds not a number');
+    }
+    setTimeout(() => resolve("done!"), milliseconds)
+  });
+};
+
+module.exports = wait;
+
 
 /***/ }),
 

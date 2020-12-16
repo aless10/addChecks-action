@@ -5,19 +5,8 @@ inputs:
     description: 'number of checks to add'
     required: false
     default: '5'
-outputs:
-  time: # output will be available to future steps
-    value: "here"
-    description: 'The message to output'
 runs:
-#  using: node12
-
-  using: "composite"
-  steps:
-    - run: ./index.sh
-      shell: bash
-    - run: ./index.sh
-      shell: bash
-#  pre: 'dist/index.js'
-#  main: 'dist/index.js'
-#  post: 'dist/index.js'
+  using: node12
+  pre: 'dist/index.js'
+  main: 'dist/index.js'
+  post: 'dist/index.js'
