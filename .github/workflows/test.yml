@@ -1,5 +1,6 @@
 name: "units-test"
 on:
+  commit:
   pull_request:
   push:
     branches:
@@ -24,3 +25,6 @@ jobs:
     - uses: ./
       with:
         checks: 3
+    - uses: ./
+        with:
+          checks: 6
