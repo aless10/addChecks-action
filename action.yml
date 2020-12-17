@@ -1,13 +1,12 @@
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
+name: 'add noop waits'
+description: 'Add some wait time to looks like your action is doing a lot of stuff'
 inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
-    required: true
-    default: '1000'
-outputs:
-  time: # output will be available to future steps
-    description: 'The message to output'
+  checks:  # id of input
+    description: 'number of loop and waits to add'
+    required: false
+    default: '1'
 runs:
-  using: 'node12'
+  using: node12
+  pre: 'dist/index.js'
   main: 'dist/index.js'
+  post: 'dist/index.js'
