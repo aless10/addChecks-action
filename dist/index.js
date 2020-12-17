@@ -10,14 +10,13 @@ const wait = __webpack_require__(258);
 
 
 // most @actions toolkit packages have async methods
-async function run(i) {
+async function run(i, total) {
   try {
 
-    core.debug((new Date()).toTimeString()); // debug is only output if you set the secret `ACTIONS_RUNNER_DEBUG` to true
+    core.info(`Doing task ${i}/${total}`);
+    core.debug("I'm very busy...");
     await wait(parseInt(i) * 100);
-    core.info((new Date()).toTimeString());
-
-    core.setOutput('time', new Date().toTimeString());
+    core.info(`Completed task ${i}/${total}`);
   } catch (error) {
     core.setFailed(error.message);
   }
@@ -25,8 +24,8 @@ async function run(i) {
 
 const checks = core.getInput('checks');
 
-for (let i = 0; i < checks; i++) {
-  run(i);
+for (let i = 1; i <= checks; i++) {
+  run(i, checks);
 }
 
 
@@ -446,7 +445,7 @@ module.exports = wait;
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("fs");
+module.exports = require("fs");;
 
 /***/ }),
 
@@ -454,7 +453,7 @@ module.exports = require("fs");
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("os");
+module.exports = require("os");;
 
 /***/ }),
 
@@ -462,7 +461,7 @@ module.exports = require("os");
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("path");
+module.exports = require("path");;
 
 /***/ })
 
