@@ -4,23 +4,22 @@ on:
   push:
     branches:
       - main
-      - looking-around
       - 'releases/*'
 
 jobs:
   # unit tests
-#  units:
-#    runs-on: ubuntu-latest
-#    steps:
-#    - uses: actions/checkout@v2
-#    - run: npm ci
-#    - run: npm test
+  units:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: npm ci
+    - run: npm test
 
   # test action works running from the graph
   test:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/addChecks-action@v1
+    - uses: ./
       with:
-        checks: 3
+        checks: 1

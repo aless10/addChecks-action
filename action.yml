@@ -1,10 +1,10 @@
-name: 'add checks'
-description: 'Add a number of checks to looks like your action is doing a lot of stuff'
+name: 'add noop waits'
+description: 'Add some wait time to looks like your action is doing a lot of stuff'
 inputs:
   checks:  # id of input
-    description: 'number of checks to add'
+    description: 'number of loop and waits to add'
     required: false
-    default: '5'
+    default: '1'
 runs:
   using: node12
   pre: 'dist/index.js'

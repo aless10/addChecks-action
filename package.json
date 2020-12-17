@@ -1,7 +1,7 @@
 {
-  "name": "add-checks-action",
+  "name": "add-noop-action",
   "version": "1.0.0",
-  "description": "Add checks to your github action",
+  "description": "Add noop checks and waits to your github action",
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
