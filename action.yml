@@ -10,3 +10,7 @@ runs:
   pre: 'dist/index.js'
   main: 'dist/index.js'
   post: 'dist/index.js'
+
+branding:
+  icon: 'activity'
+  color: green
